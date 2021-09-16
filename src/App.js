@@ -21,7 +21,6 @@ function App() {
 			<Skill />
 			<Timeline />
 			<MainFoot />
-			<script src="./js/app.js"></script>
 		</>
 	);
 }
