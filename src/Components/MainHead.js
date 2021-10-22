@@ -23,9 +23,6 @@ const MainHead = () => {
 							<li>
 								<SocialIcon url="https://www.facebook.com/rupayan.karanjai/" />
 							</li>
-							{/* <li>
-								<SocialIcon url="https://drive.google.com/drive/u/0/folders/1aY_Wzqrp330gE062mo5QBVfeU4HKSoOj" />
-							</li> */}
 						</ul>
 					</article>
 					<article className="hero-img">

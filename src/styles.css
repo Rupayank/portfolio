@@ -570,11 +570,12 @@ Hero
 	margin-bottom: 0.5rem;
 	margin-left: 0;
 }
-.hero-img {
+/* .hero-img {
 	display: none;
-}
+} */
 .hero {
 	background: var(--clr-primary-10);
+	/* background-image: url("wall.gif"); */
 }
 .hero-center {
 	min-height: calc(100vh - 5rem);
