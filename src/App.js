@@ -8,15 +8,21 @@ import Contact from "./Components/Contact";
 import Skill from "./Components/Skill";
 import Timeline from "./Components/Timeline";
 import MainFoot from "./Components/MainFoot";
+import { useState } from "react";
 
 function App() {
+	const [latest, setLatest] = useState(false);
+	const [domain, setDomain] = useState(false);
+
 	return (
 		<>
 			<Navbar />
 			<MainHead />
 			<About />
-			<Services />
-			<Latest />
+			<button onClick={() => setDomain(!domain)}>My Domains</button>
+			{domain && <Services />}
+			<button onClick={() => setLatest(!latest)}>LatestWork</button>
+			{latest && <Latest />}
 			<Contact />
 			<Skill />
 			<Timeline />

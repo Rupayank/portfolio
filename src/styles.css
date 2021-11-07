@@ -745,12 +745,10 @@ Projects
 	opacity: 1;
 }
 .project-img {
-	-webkit-transition: var(--transition);
-	transition: var(--transition);
-	border-radius: var(--radius);
-	height: 15rem;
-	-o-object-fit: cover;
-	object-fit: cover;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
 }
 .project:hover .project-img {
 	opacity: 0.1;
