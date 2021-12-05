@@ -59,9 +59,12 @@ Global Styles
 	width: 90%;
 	margin: auto;
 }
-
-.btn {
-	display: inline-block;
+/* Old below */
+.btns {
+	margin: 10px;
+	width: 50%;
+	border: 3px solid green;
+	padding: 10px;
 	padding: 0.5em 1.5em;
 	text-decoration: none;
 	border-radius: 50px;
@@ -72,12 +75,12 @@ Global Styles
 	font-weight: small;
 }
 
-.btn-primary {
+.btns-primary {
 	color: #fff;
 	background: #16a083;
 }
 
-.btn-primary:hover {
+.btns-primary:hover {
 	background: #117964;
 	transition: background 0.3s ease-in-out;
 }
@@ -166,6 +169,16 @@ Global Styles
 	order: 1;
 	font-size: 2.3rem;
 	margin-bottom: 0.5rem;
+	font-family: "Poppins";
+	/* animation: beat .25s infinite alternate;
+	transform-origin: center; */
+}
+
+/* Heart beat animation */
+@keyframes beat {
+	to {
+		transform: scale(1.4);
+	}
 }
 
 /* Mobile mode */
@@ -241,6 +254,7 @@ Global Styles
 		flex-direction: column;
 		margin-left: -40px;
 		padding-left: 50px;
+		padding-right: 25px;
 		transition: transform 0.5s ease-in-out;
 		box-shadow: 5px 0px 10px 0px #aaa;
 	}
@@ -353,7 +367,7 @@ p {
 }
 /*  global classes */
 
-.btn {
+.btns {
 	text-transform: uppercase;
 	background: var(--clr-primary-5);
 	color: var(--clr-primary-1);
@@ -369,7 +383,7 @@ p {
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 	border-radius: var(--radius);
 }
-.btn:hover {
+.btns:hover {
 	color: var(--clr-primary-1);
 	background: var(--clr-primary-7);
 }
@@ -398,7 +412,7 @@ p {
 	margin-right: auto;
 }
 .section-title {
-	margin-bottom: 4rem;
+	margin-bottom: 2rem;
 	text-align: center;
 }
 .bg-grey {
@@ -710,6 +724,7 @@ Services
 /* talk about small screen 
 without grid different setup */
 /*
+
 =============== 
 Projects
 ===============
@@ -799,16 +814,16 @@ Projects
 	.project {
 		height: 100%;
 	}
-	.project-1 {
+	.project-0 {
 		grid-area: a;
 	}
-	.project-2 {
+	.project-1 {
 		grid-area: b;
 	}
-	.project-3 {
+	.project-2 {
 		grid-area: c;
 	}
-	.project-4 {
+	.project-3 {
 		grid-area: d;
 	}
 }
@@ -818,10 +833,10 @@ Connect
 ===============
 */
 .connect {
-	min-height: 40vh;
+	/* min-height: 10vh; */
 	position: relative;
-	padding: 10rem 0 5rem 0;
-	margin: 5rem 0;
+	padding: 5rem 0 5rem 0;
+	/* margin: 1rem 0; */
 }
 .video-container {
 	position: absolute;
@@ -1209,4 +1224,10 @@ Products Page
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
 	gap: 3rem 1rem;
+}
+
+#work-card:hover {
+	transform: scale(1.1);
+	transition: all 0.3s ease-in-out;
+	box-shadow: 0 0 50px #ccc;
 }

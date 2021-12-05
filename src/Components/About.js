@@ -3,20 +3,12 @@ import React from "react";
 const About = () => {
 	return (
 		<>
-			<section className="section about">
-				<div className="section-center about-center">
-					<article className="about-img">
-						<img
-							src="./images/about-img.jpeg"
-							className="hero-photo"
-							alt="about img"
-						/>
-					</article>
-
-					<article className="about-info">
-						<div className="section-title about-title">
+			<section className='section about'>
+				<div className='section-center'>
+					<article className='about-info'>
+						<div className='section-title about-title'>
 							<h2>about</h2>
-							<div className="underline"></div>
+							<div className='underline'></div>
 						</div>
 
 						<p>
@@ -33,7 +25,7 @@ const About = () => {
 							consequuntur, doloribus inventore reprehenderit officiis. Dolore
 							aut, repellendus eius fugiat numquam cumque.
 						</p>
-						<a href="about.html" className="btn">
+						<a href='about.html' className='btns'>
 							about me
 						</a>
 					</article>

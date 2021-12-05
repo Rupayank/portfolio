@@ -1,41 +1,47 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const Service = () => {
+	const [domains, setDomains] = useState([]);
+	const getDomains = async () => {
+		const res = await axios.get("http://localhost:3340/domain");
+		setDomains(res.data.response);
+	};
+	useEffect(() => {
+		getDomains();
+	}, []);
 	return (
 		<>
-			<section className="section bg-grey">
-				<div className="section-title">
-					<h2>My Domains</h2>
-					<div className="underline"></div>
-				</div>
+			{domains.length >= 1 ? (
+				<section className='section bg-grey'>
+					<div className='section-title'>
+						<h2>My Domains</h2>
+						<div className='underline'></div>
+					</div>
 
-				<div className="services-center section-center">
-					<article className="service">
-						<i className="fas fa-code service-icon"></i>
-						<h4>Web development</h4>
-						<div className="underline"></div>
-						<p>
-							Full Stack Web development using MERN web development framework.
-						</p>
-					</article>
-
-					<article className="service">
-						<i className="fas fa-code service-icon"></i>
-						<h4>VAPT</h4>
-						<div className="underline"></div>
-						<p>
-							Vulnerability assessment and penetration testing for web application security.
-						</p>
-					</article>
-
-					<article className="service">
-						<i className="fab fa-sketch service-icon"></i>
-						<h4>Android Application Development</h4>
-						<div className="underline"></div>
-						<p>Develop android applications using Android Studio.</p>
-					</article>
-				</div>
-			</section>
+					<div className='services-center section-center'>
+						{domains.map((domain) => {
+							const { _id, name, description } = domain;
+							return (
+								<>
+									<article key={_id} className='service'>
+										<i className='fas fa-code service-icon'></i>
+										<h4>{name}</h4>
+										<div className='underline'></div>
+										<p>{description}</p>
+									</article>
+								</>
+							);
+						})}
+					</div>
+				</section>
+			) : (
+				<section className='section bg-grey'>
+					<div className='section-title'>
+						<h3>Server error 500</h3>
+					</div>
+				</section>
+			)}
 		</>
 	);
 };
