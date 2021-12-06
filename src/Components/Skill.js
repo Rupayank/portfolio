@@ -4,16 +4,13 @@ const Skill = () => {
 	return (
 		<>
 			<section className='section skills'>
-				{/* <!-- section title --> */}
 				<div className='section-title'>
 					<h2>skills</h2>
 					<div className='underline'></div>
 				</div>
-				{/* <!--end of section title --> */}
 				<div className='section-center skills-center'>
 					<article>
 						<h3>front end</h3>
-						{/* <!-- single skill --> */}
 						<div className='skill'>
 							<p>HTML/CSS</p>
 							<div className='skill-container'>
@@ -21,8 +18,7 @@ const Skill = () => {
 								<p className='skill-text'>50%</p>
 							</div>
 						</div>
-						{/* <!--end of  single skill --> */}
-						{/* <!-- single skill --> */}
+
 						<div className='skill'>
 							<p>Javascript</p>
 							<div className='skill-container'>

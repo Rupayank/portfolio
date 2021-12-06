@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../login.css";
 const Login = () => {
 	return (
@@ -17,7 +18,7 @@ const Login = () => {
 					</label>
 					<input id='tab-2' type='radio' name='tab' className='sign-up' />
 					<label for='tab-2' className='tab'>
-						Sign Up
+						Go back
 					</label>
 					<div className='login-form'>
 						<div className='sign-in-htm'>
@@ -45,7 +46,10 @@ const Login = () => {
 								</label>
 							</div>
 							<div className='group'>
-								<input type='submit' className='button' value='Sign In' />
+								<Link to='/admin' className='button'>
+									Sign In
+								</Link>
+								{/* <input type='submit' className='button' value='Sign In' /> */}
 							</div>
 							<div className='foot-lnk'>
 								<a href='#forgot'>Forgot Password?</a>

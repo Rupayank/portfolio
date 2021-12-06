@@ -25,9 +25,9 @@ const About = () => {
 							consequuntur, doloribus inventore reprehenderit officiis. Dolore
 							aut, repellendus eius fugiat numquam cumque.
 						</p>
-						<a href='about.html' className='btns'>
+						{/* <a href='about.html' className='btns'>
 							about me
-						</a>
+						</a> */}
 					</article>
 				</div>
 			</section>

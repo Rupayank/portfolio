@@ -9,8 +9,8 @@ router.get("/domain", async (req, res) => {
 	res.send({ message: "All domains", response: domains });
 });
 router.post("/domain", async (req, res) => {
-	// console.log(req.body);
-	const { name, description } = req.body;
+	// console.log(req.body.domain);
+	const { name, description } = req.body.domain;
 	const domain = await Domain.create({ name, description });
 	res.send({ message: "Added new domain", response: domain });
 });
@@ -21,7 +21,7 @@ router.get("/work", async (req, res) => {
 });
 router.post("/work", async (req, res) => {
 	try {
-		const { projectName, companyName, url } = req.body;
+		const { projectName, companyName, url } = req.body.work;
 		const work = await Work.create({ projectName, companyName, url });
 		res.send({ message: "Added new work", response: work });
 	} catch (err) {
