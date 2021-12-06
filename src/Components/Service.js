@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import FadeIn from "react-fade-in";
 
 const Service = () => {
 	const [domains, setDomains] = useState([]);
@@ -24,12 +25,14 @@ const Service = () => {
 							const { _id, name, description } = domain;
 							return (
 								<>
-									<article key={_id} className='service'>
-										<i className='fas fa-code service-icon'></i>
-										<h4>{name}</h4>
-										<div className='underline'></div>
-										<p>{description}</p>
-									</article>
+									<FadeIn transitionDuration='1000'>
+										<article key={_id} className='service'>
+											<i className='fas fa-code service-icon'></i>
+											<h4>{name}</h4>
+											<div className='underline'></div>
+											<p>{description}</p>
+										</article>
+									</FadeIn>
 								</>
 							);
 						})}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import Typical from "react-typical";
 import dp from "../Images/ME.jpg";
 import { SocialIcon } from "react-social-icons";
@@ -9,6 +9,7 @@ import Latest from "./LatestWork";
 import Contact from "./Contact";
 import MainFoot from "./MainFoot";
 import { useState } from "react";
+
 const MainHead = () => {
 	const [latest, setLatest] = useState(false);
 	const [domain, setDomain] = useState(false);
@@ -58,6 +59,7 @@ const MainHead = () => {
 			<div className='bg-light'>
 				<div className='row p-3'>
 					<button
+						id='domain-btn'
 						className='container col-2 btn btn-warning'
 						onClick={() => setDomain(!domain)}
 					>

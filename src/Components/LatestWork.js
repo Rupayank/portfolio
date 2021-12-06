@@ -3,6 +3,7 @@ import giz from "../Images/giz.png";
 // import terror from "../Images/terror.png";
 // import insurrd from "../Images/insurrd.png";
 import axios from "axios";
+import FadeIn from "react-fade-in";
 
 const LatestWork = () => {
 	const [works, setWorks] = useState([]);
@@ -30,7 +31,6 @@ const LatestWork = () => {
 				<div className='row' style={{ justifyContent: "space-evenly" }}>
 					{works.map((work, index) => {
 						const { _id, projectName, companyName, url } = work;
-						// let pro = `project-${index}`;
 						return (
 							<>
 								<div
@@ -42,14 +42,16 @@ const LatestWork = () => {
 									}}
 									key={_id}
 								>
-									<img src={giz} className='card-img-top' alt='' />
-									<div className='card-body'>
-										<h5 className='card-title'>{projectName}</h5>
-										<p className='card-text'>{companyName}</p>
-										<a href={url} className='btn btn-primary'>
-											Link
-										</a>
-									</div>
+									<FadeIn transitionDuration='1000'>
+										<img src={giz} className='card-img-top' alt='' />
+										<div className='card-body'>
+											<h5 className='card-title'>{projectName}</h5>
+											<p className='card-text'>{companyName}</p>
+											<a href={url} className='btn btn-primary'>
+												Link
+											</a>
+										</div>
+									</FadeIn>
 								</div>
 								{/* <a key={id} href={url} className={pro}> */}
 								{/* <article className='project'> */}

@@ -89,72 +89,83 @@ function AdminPanel() {
 		});
 	}
 	return (
-		<div classNameName='container'>
+		<div classNameName=''>
 			{/* Domains */}
-			<form id='contact' onSubmit={handleDomainSubmit}>
-				<h3>Domains</h3>
-				<fieldset>
-					<input
-						placeholder='Domain name'
-						onChange={handleChange}
-						value={domain.name}
-						name='name'
-						type='text'
-						tabIndex='1'
-						required
-						autoFocus
-					/>
-				</fieldset>
-				<fieldset>
-					<input
-						onChange={handleChange}
-						value={domain.description}
-						name='description'
-						placeholder='Description'
-						type='text'
-						tabIndex='2'
-						required
-					/>
-				</fieldset>
-				<fieldset>
-					<button
-						name='submit'
-						type='submit'
-						id='contact-submit'
-						data-submit='...Sending'
-					>
-						Submit
-					</button>
-				</fieldset>
-			</form>
-			<table className='table table-dark'>
+			<div className='container'>
+				<form id='contact' onSubmit={handleDomainSubmit}>
+					<h3>Domains</h3>
+					<fieldset>
+						<input
+							placeholder='Domain name'
+							onChange={handleChange}
+							value={domain.name}
+							name='name'
+							type='text'
+							tabIndex='1'
+							required
+							autoFocus
+						/>
+					</fieldset>
+					<fieldset>
+						<input
+							onChange={handleChange}
+							value={domain.description}
+							name='description'
+							placeholder='Description'
+							type='text'
+							tabIndex='2'
+							required
+						/>
+					</fieldset>
+					<fieldset>
+						<button
+							name='submit'
+							type='submit'
+							id='contact-submit'
+							data-submit='...Sending'
+						>
+							Submit
+						</button>
+					</fieldset>
+				</form>
+			</div>
+			<table className='container table table-dark'>
 				<thead>
 					<tr>
 						<th scope='col'>#</th>
-						<th scope='col'>First</th>
-						<th scope='col'>Last</th>
-						<th scope='col'>Handle</th>
+						<th scope='col'>Domain</th>
+						<th scope='col'>Description</th>
+						<th scope='col' colSpan='2'>
+							Action
+						</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<th scope='row'>1</th>
+					{/* <th scope='row'>1</th>
 						<td>Mark</td>
 						<td>Otto</td>
-						<td>@mdo</td>
-					</tr>
-					<tr>
-						<th scope='row'>2</th>
-						<td>Jacob</td>
-						<td>Thornton</td>
-						<td>@fat</td>
-					</tr>
-					<tr>
-						<th scope='row'>3</th>
-						<td>Larry</td>
-						<td>the Bird</td>
-						<td>@twitter</td>
-					</tr>
+						<td>@mdo</td> */}
+					{domainList.map((domain, index) => {
+						const { name, description } = domain;
+						return (
+							<>
+								<tr>
+									<th scope='row'>{index + 1}</th>
+									<td>{name}</td>
+									<td>{description}</td>
+
+									<td colSpan='2'>
+										<button type='button' class='btn btn-warning m-1'>
+											Update
+										</button>
+										<button type='button' class='btn btn-danger'>
+											Delete
+										</button>
+									</td>
+								</tr>
+							</>
+						);
+					})}
 				</tbody>
 			</table>
 
